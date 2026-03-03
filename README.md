@@ -71,6 +71,29 @@ cd macro-dash
 open index.html   # or double-click in Finder/Explorer
 ```
 
+To run the ETL script (`etl/fetch_data.py`) locally and regenerate JSON data files:
+
+1. Get your own free FRED API key: https://fred.stlouisfed.org/docs/api/api_key.html
+
+2. Set it as a local environment variable (temporary for the session):
+MacOS/Linux:
+```bash
+export FRED_API_KEY=your_actual_key_here
+```
+or (Windows CMD):
+```bash
+set FRED_API_KEY=your_actual_key_here
+```
+3. Install dependencies:
+```bash
+pip install -r requirements.txt
+```
+4. Run the script:
+```bash
+python etl/fetch_data.py
+```
+**Note:** The GitHub Actions workflow uses a repository secret (`FRED_API_KEY`) for automated daily updates — the key is never exposed in code. For local runs, you must supply your own key via environment variable.
+
 ---
 
 ## Note on Repository Rename
