@@ -3,7 +3,7 @@
 📊 A static dashboard that tracks key macroeconomic indicators relevant to crypto markets.  
 Data updates daily via [GitHub Actions](.github/workflows/update-data.yml) and is visualized with [Chart.js](https://www.chartjs.org/).
 
-🌐 **Live site:** [https://space-lumps.github.io/macro-dash/](https://space-lumps.github.io/macro-dash/)
+🌐 **Live site:** [https://space-lumps.github.io/macro-financial-indicators/](https://space-lumps.github.io/macro-financial-indicators/)
 
 ---
 
@@ -61,6 +61,16 @@ This macro dashboard is the first component of a larger analytics project.
 Clone the repo and open `index.html` in a browser:
 
 ```bash
-git clone https://github.com/space-lumps/macro-dash.git
+git clone https://github.com/space-lumps/macro-financial-indicators.git
 cd macro-dash
 open index.html   # or double-click in Finder/Explorer
+```
+
+---
+
+### Note on Repository Rename
+This repo was previously named `macro-dash`.
+
+- GitHub auto-redirects the old repo URL, clone commands, stars, etc., to the current name.
+- The GitHub Pages site URL is updated to match the new repo name (old Pages URL no longer works).
+- Old clone URLs continue to work seamlessly.
