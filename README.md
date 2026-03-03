@@ -1,4 +1,5 @@
 # Macroeconomic Indicators Dashboard
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 
 📊 A static dashboard that tracks key macroeconomic indicators relevant to crypto markets.  
 Data updates daily via [GitHub Actions](.github/workflows/update-data.yml) and is visualized with [Chart.js](https://www.chartjs.org/).
@@ -68,9 +69,18 @@ open index.html   # or double-click in Finder/Explorer
 
 ---
 
-### Note on Repository Rename
+## Note on Repository Rename
 This repo was previously named `macro-dash`.
 
 - GitHub auto-redirects the old repo URL, clone commands, stars, etc., to the current name.
 - The GitHub Pages site URL is updated to match the new repo name (old Pages URL no longer works).
 - Old clone URLs continue to work seamlessly.
+
+--- 
+
+## License
+
+MIT License
+Copyright (c) 2025-2026 Corin Stedman
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
