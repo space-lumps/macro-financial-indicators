@@ -4,6 +4,7 @@
 [![Update data](https://github.com/space-lumps/macro-financial-indicators/actions/workflows/update-data.yml/badge.svg)](https://github.com/space-lumps/macro-financial-indicators/actions/workflows/update-data.yml)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/)
 [![Chart.js](https://img.shields.io/badge/Chart.js-v4-orange.svg)](https://www.chartjs.org/)
+[![Latest Release](https://img.shields.io/github/v/release/space-lumps/macro-financial-indicators?color=orange)](https://github.com/space-lumps/macro-financial-indicators/releases/latest)
 
 📊 A static dashboard that tracks key macroeconomic indicators relevant to crypto markets.  
 Data updates daily via [GitHub Actions](.github/workflows/update-data.yml) and is visualized with [Chart.js](https://www.chartjs.org/).
