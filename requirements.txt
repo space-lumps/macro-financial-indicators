@@ -1,0 +1,8 @@
+# requirements.txt
+# Python dependencies required to run the ETL scripts in /etl/
+# Use: pip install -r requirements.txt
+
+requests>=2.25.0       # HTTP requests to fetch data from FRED API
+
+# Optional: for loading .env files during local development (e.g., for FRED_API_KEY)
+# python-dotenv>=1.0.0
