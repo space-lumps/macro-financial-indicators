@@ -11,10 +11,10 @@ const PALETTE = ['#60a5fa','#a78bfa','#34d399','#f59e0b','#f472b6','#22d3ee']; /
 
 // Map each chart to its source label + link
 const SOURCES = {
-  m2:       { label: 'Source: FRED (M2SL)', url: 'https://fred.stlouisfed.org/series/M2SL' },
-  usd:      { label: 'Source: FRED (DTWEXBGS)', url: 'https://fred.stlouisfed.org/series/DTWEXBGS' },
-  yields:   { label: 'Source: FRED (DGS2, DGS10)', url: 'https://fred.stlouisfed.org' },
-  spread:   { label: 'Source: FRED (T10Y2Y)', url: 'https://fred.stlouisfed.org/series/T10Y2Y' },
+  m2:       { label: 'Source: FRED — M2SL', url: 'https://fred.stlouisfed.org/series/M2SL' },
+  usd:      { label: 'Source: FRED — DTWEXBGS', url: 'https://fred.stlouisfed.org/series/DTWEXBGS' },
+  yields:   { label: 'Source: FRED — DGS10 & DGS2', url: 'https://fred.stlouisfed.org/series/DGS10' },
+  spread:   { label: 'Source: FRED — T10Y2Y', url: 'https://fred.stlouisfed.org/series/T10Y2Y' },
   vix:      { label: 'Source: FRED — VIXCLS', url: 'https://fred.stlouisfed.org/series/VIXCLS' },
   cpi:      { label: 'Source: FRED — CPIAUCSL', url: 'https://fred.stlouisfed.org/series/CPIAUCSL' },
   fedfunds: { label: 'Source: FRED — FEDFUNDS', url: 'https://fred.stlouisfed.org/series/FEDFUNDS' },
@@ -54,6 +54,15 @@ function lineDS(label, data, color){
   };
 }
 
+// Helper: Format ISO date string to MM-YY for x-axis labels
+// Ensures consistent, compact display without relying on time scale
+function formatDateToMMYY(isoDateStr) {
+  const date = new Date(isoDateStr);
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const year = String(date.getFullYear()).slice(-2);
+  return `${month}-${year}`;
+}
+
 // M2 (M2SL)
 (async () => {
   try {
@@ -61,7 +70,8 @@ function lineDS(label, data, color){
     if (!r.ok) throw new Error(`m2.json ${r.status}`);
     const data = await r.json();
     setMeta('m2', data);
-    const labels = data.points.map(p => p.date);
+    // Format dates to MM-YY for cleaner x-axis display (category scale fallback)
+    const labels = data.points.map(p => formatDateToMMYY(p.date));
     const vals   = data.points.map(p => p.value);
     new Chart(document.getElementById('m2'), {
       type: 'line',
@@ -78,7 +88,7 @@ function lineDS(label, data, color){
     if (!r.ok) throw new Error(`usd_index.json ${r.status}`);
     const data = await r.json();
     setMeta('usd', data);
-    const labels = data.points.map(p => p.date);
+    const labels = data.points.map(p => formatDateToMMYY(p.date));
     const vals   = data.points.map(p => p.value);
     new Chart(document.getElementById('usd'), {
       type: 'line',
@@ -122,7 +132,7 @@ function lineDS(label, data, color){
     if (!r.ok) throw new Error(`spread_10y_2y.json ${r.status}`);
     const data = await r.json();
     setMeta('spread', data);
-    const labels = data.points.map(p=>p.date);
+    const labels = data.points.map(p => formatDateToMMYY(p.date));
     const vals   = data.points.map(p=>p.value);
     new Chart(document.getElementById('spread'), {
       type: 'line',
@@ -139,7 +149,7 @@ function lineDS(label, data, color){
     if (!r.ok) throw new Error(`vix.json ${r.status}`);
     const data = await r.json();
     setMeta('vix', data);
-    const labels = data.points.map(p=>p.date);
+    const labels = data.points.map(p => formatDateToMMYY(p.date));
     const vals   = data.points.map(p=>p.value);
     new Chart(document.getElementById('vix'), {
       type: 'line',
@@ -156,7 +166,7 @@ function lineDS(label, data, color){
     if (!r.ok) throw new Error(`cpi.json ${r.status}`);
     const data = await r.json();
     setMeta('cpi', data);  // uses SOURCES.cpi
-    const labels = data.points.map(p => p.date);
+    const labels = data.points.map(p => formatDateToMMYY(p.date));
     const vals   = data.points.map(p => p.value);
     new Chart(document.getElementById('cpi'), {
       type: 'line',
@@ -175,7 +185,7 @@ function lineDS(label, data, color){
     if (!r.ok) throw new Error(`fedfunds.json ${r.status}`);
     const data = await r.json();
     setMeta('fedfunds', data);  // uses SOURCES.fedfunds
-    const labels = data.points.map(p => p.date);
+    const labels = data.points.map(p => formatDateToMMYY(p.date));
     const vals   = data.points.map(p => p.value);
     new Chart(document.getElementById('fedfunds'), {
       type: 'line',
