@@ -18,7 +18,10 @@
     <div class="chart">
       <canvas id="m2"></canvas>
       <div class="caption">
-        <div class="desc"><strong>M2 money stock:</strong> Broad USD liquidity. Rising M2 = easier liquidity → tailwind for risk (often supportive for BTC); falling = headwind.</div>
+          <div class="desc">
+            <strong>M2 money stock</strong> Broad USD liquidity (billions of USD, seasonally adjusted).
+            <br>Rising M2 = easier liquidity → tailwind for risk (often supportive for BTC); falling = headwind.
+          </div>
         <div class="meta">
           <div id="src-m2"></div>
           <div id="upd-m2"></div>
@@ -29,8 +32,11 @@
     <div class="chart">
       <canvas id="usd"></canvas>
       <div class="caption">
-        <div class="desc"><strong>USD Broad Index:</strong> Dollar strength. Typically inverse to BTC—strong USD = risk-off; weak USD = risk-on.</div>
-        <div class="meta">
+          <div class="desc">
+            <strong>USD Broad Index</strong> Trade-weighted dollar strength (index value, 2020–2022 average = 100).
+            <br>Strong USD = risk-off pressure (often inverse to BTC); weak USD = risk-on tailwind.
+          </div>
+          <div class="meta">
           <div id="src-usd"></div>
           <div id="upd-usd"></div>
         </div>
@@ -40,7 +46,11 @@
     <div class="chart">
       <canvas id="yields"></canvas>
       <div class="caption">
-        <div class="desc"><strong>UST 2Y vs 10Y:</strong> Front-end tracks Fed path; long-end = growth/inflation outlook.</div>
+        <div class="desc">
+          <strong>UST 2Y vs 10Y yields</strong> Short- vs long-end rates (yield in %).
+          <br>2Y tracks Fed policy closely; 10Y reflects growth/inflation expectations. Steep curve = growth optimism;
+          flat/inverted = caution.
+        </div>
         <div class="meta">
           <div id="src-yields"></div>
           <div id="upd-yields"></div>
@@ -51,7 +61,9 @@
     <div class="chart">
       <canvas id="spread"></canvas>
       <div class="caption">
-        <div class="desc"><strong>10Y–2Y Spread:</strong> Inversion often signals slowdown risk; re-steepening can precede regime shifts.</div>
+        <div class="desc"><strong>10Y–2Y Spread:</strong> Long-short Treasury curve (percentage points).
+        <br>Inversion (negative spread) historically signals recession risk; steepening often precedes economic recovery or
+        policy pivot.</div>
         <div class="meta">
           <div id="src-spread"></div>
           <div id="upd-spread"></div>
@@ -62,7 +74,11 @@
     <div class="chart">
       <canvas id="vix"></canvas>
       <div class="caption">
-        <div class="desc"><strong>VIX (Equity Volatility):</strong> Higher VIX = stress/risk-off (often BTC drawdowns); low, falling VIX = risk-on but beware complacency.</div>
+        <div class="desc">
+          <strong>VIX (CBOE Volatility Index)</strong> Expected 30-day S&P 500 volatility (index level).
+          <br>High/spiking VIX = market fear/risk-off (often BTC drawdowns); low/complacent VIX = risk-on but can precede
+          corrections.
+        </div>
         <div class="meta">
           <div id="src-vix"></div>
           <div id="upd-vix"></div>
@@ -73,7 +89,11 @@
     <div class="chart">
       <canvas id="cpi"></canvas>
       <div class="caption">
-        <div class="desc"><strong>CPI (Inflation):</strong> Higher CPI = persistent inflation → pressure for tighter Fed policy, which is a headwind for risk assets like BTC. Falling CPI = easing conditions.</div>
+        <div class="desc">
+          <strong>CPI (Consumer Price Index)</strong> Headline inflation (year-over-year % change).
+          <br>High/persistent CPI = pressure for tighter Fed policy (headwind for risk assets like BTC); falling CPI = easing
+          conditions → supportive for risk.
+        </div>
         <div class="meta">
           <div id="src-cpi"></div>
           <div id="upd-cpi"></div>
@@ -84,7 +104,11 @@
     <div class="chart">
       <canvas id="fedfunds"></canvas>
       <div class="caption">
-        <div class="desc"><strong>Fed Funds Rate:</strong> The policy rate set by the Fed. Rising = tighter liquidity (risk-off for crypto); falling or stable = supportive for risk-on behavior.</div>
+        <div class="desc">
+          <strong>Fed Funds Rate</strong> Target policy rate (effective rate in %).
+          <br>Rising rate = tightening liquidity (risk-off for crypto/assets); cuts or pause = accommodative stance → tailwind
+          for risk-on behavior.
+        </div>
         <div class="meta">
           <div id="src-fedfunds"></div>
           <div id="upd-fedfunds"></div>
